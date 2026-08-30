@@ -1,36 +1,56 @@
+import Image from "next/image";
+
 export default function Hero() {
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background with overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-neutral-700 to-neutral-600">
-        <div className="absolute inset-0 bg-black opacity-40"></div>
+    <section className="relative h-screen overflow-hidden">
+      {/* Background image */}
+      <div className="absolute inset-0 z-0">
+        <Image src="/images/herosectoin.jpg" alt="Hero" fill className="object-cover object-center" priority />
+        <div className="absolute inset-0 bg-black opacity-40 z-10"></div>
       </div>
 
-      {/* Mist effect */}
-      <div className="absolute top-0 left-0 right-0 text-white text-xs tracking-[0.3em] text-center py-4 z-10">
-        <div className="opacity-60">VOLCANOES NATIONAL PARK — MORNING MIST</div>
+      {/* Mist effect - vertically aligned on right bottom */}
+      <div className="absolute right-6 md:right-8 bottom-0 z-10 pb-8 md:pb-12">
+        <div className="flex flex-col items-center">
+          {/* Horizontal line above the text */}
+          <div className="h-px w-8 bg-white opacity-40 mb-3"></div>
+          
+          {/* Vertical text */}
+          <div className="text-white text-[9px] tracking-[0.4em] opacity-60 writing-mode-vertical transform rotate-180">
+            VOLCANOES NATIONAL PARK — MORNING MIST
+          </div>
+        </div>
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 text-white text-center px-6 max-w-5xl">
-        <div className="text-xs tracking-[0.3em] mb-8 opacity-80">RWANDA</div>
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-light leading-tight mb-6">
+      {/* Content - Left bottom aligned */}
+      <div className="absolute bottom-0 left-0 z-10 text-white px-6 md:px-12 lg:px-16 pb-8 md:pb-12 max-w-3xl">
+        {/* RWANDA with extra spacing */}
+        <div className="text-[11px] tracking-[0.5em] mb-4 md:mb-5 opacity-80 font-light">
+          RWANDA
+        </div>
+        
+        {/* Main heading */}
+        <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light leading-[1.15] mb-3 md:mb-4">
           We didn&rsquo;t just<br />
           discover Rwanda.
         </h1>
-        <p className="text-4xl md:text-5xl lg:text-6xl italic font-light mb-12">
+        
+        {/* Italic subheading */}
+        <p className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl italic font-light mb-6 md:mb-8 leading-[1.2]">
           We grew up here.
         </p>
-        <p className="text-base md:text-lg max-w-2xl mx-auto font-light leading-relaxed">
-          A Rwanda travel company created by photographers who grew up<br className="hidden md:block" />
+        
+        {/* Description */}
+        <p className="text-xs md:text-sm max-w-md font-light leading-relaxed opacity-90">
+          A Rwanda travel company created by photographers who grew up<br className="hidden sm:block" />
           in its forests and hills.
         </p>
+      </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2">
-          <div className="text-xs tracking-[0.3em] mb-4">SCROLL</div>
-          <div className="w-px h-16 bg-white mx-auto opacity-50"></div>
-        </div>
+      {/* Scroll indicator - centered at bottom */}
+      <div className="absolute bottom-8 md:bottom-12 left-1/2 transform -translate-x-1/2 z-10">
+        <div className="text-[9px] tracking-[0.4em] mb-3 text-white text-center">SCROLL</div>
+        <div className="w-px h-6 bg-white mx-auto opacity-50"></div>
       </div>
     </section>
   );

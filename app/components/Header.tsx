@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 export default function Header() {
@@ -8,25 +9,24 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-transparent">
-      <nav className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
-        <Link href="/" className="text-white tracking-[0.3em] text-sm font-light">
-          GREEN WAY
-          <div className="text-xs tracking-[0.4em]">Safaris</div>
+      <nav className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+        <Link href="/">
+          <Image src="/logo.png" alt="Green Way Safaris" width={180} height={72} className="object-contain" />
         </Link>
 
         <div className="hidden md:flex items-center gap-12">
-          <Link href="#encounters" className="text-white text-sm tracking-[0.2em] hover:opacity-70 transition-opacity">
+          <Link href="#encounters" className="text-white text-[10px] tracking-[0.2em] hover:opacity-70 transition-opacity font-sans">
             ENCOUNTERS
           </Link>
-          <Link href="#story" className="text-white text-sm tracking-[0.2em] hover:opacity-70 transition-opacity">
+          <Link href="#story" className="text-white text-[10px] tracking-[0.2em] hover:opacity-70 transition-opacity font-sans">
             OUR STORY
           </Link>
-          <Link href="#impact" className="text-white text-sm tracking-[0.2em] hover:opacity-70 transition-opacity">
+          <Link href="#impact" className="text-white text-[10px] tracking-[0.2em] hover:opacity-70 transition-opacity font-sans">
             IMPACT
           </Link>
           <Link 
             href="#plan" 
-            className="text-white text-sm tracking-[0.2em] border border-white px-6 py-2 hover:bg-white hover:text-neutral-900 transition-all"
+            className="text-white text-[10px] tracking-[0.2em] border border-white px-6 py-2 hover:bg-white hover:text-neutral-900 transition-all font-sans"
           >
             PLAN YOUR TRIP →
           </Link>
@@ -44,16 +44,16 @@ export default function Header() {
 
       {isOpen && (
         <div className="md:hidden bg-black bg-opacity-95 text-white p-6 space-y-4">
-          <Link href="#encounters" className="block text-sm tracking-[0.2em]" onClick={() => setIsOpen(false)}>
+          <Link href="#encounters" className="block text-[10px] tracking-[0.2em] font-sans" onClick={() => setIsOpen(false)}>
             ENCOUNTERS
           </Link>
-          <Link href="#story" className="block text-sm tracking-[0.2em]" onClick={() => setIsOpen(false)}>
+          <Link href="#story" className="block text-[10px] tracking-[0.2em] font-sans" onClick={() => setIsOpen(false)}>
             OUR STORY
           </Link>
-          <Link href="#impact" className="block text-sm tracking-[0.2em]" onClick={() => setIsOpen(false)}>
+          <Link href="#impact" className="block text-[10px] tracking-[0.2em] font-sans" onClick={() => setIsOpen(false)}>
             IMPACT
           </Link>
-          <Link href="#plan" className="block text-sm tracking-[0.2em]" onClick={() => setIsOpen(false)}>
+          <Link href="#plan" className="block text-[10px] tracking-[0.2em] font-sans" onClick={() => setIsOpen(false)}>
             PLAN YOUR TRIP →
           </Link>
         </div>
