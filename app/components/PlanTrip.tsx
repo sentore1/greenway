@@ -31,7 +31,7 @@ export default function PlanTrip() {
           <div>
             <div className="text-xs tracking-[0.3em] mb-8 text-neutral-500">PLAN YOUR TRIP</div>
             <h2 className="text-4xl md:text-5xl font-light leading-tight mb-8" style={{ fontFamily: 'var(--font-cormorant)' }}>
-              Tell us what you&rsquo;re dreaming of.
+              Tell us what you&rsquo;re<br />dreaming of.
             </h2>
             <p className="text-sm leading-relaxed text-neutral-600 mb-12 max-w-sm">
               Every Green Way journey is personal. Tell us a little about yourself, when you&rsquo;d like to come, and what you&rsquo;d love to experience. We&rsquo;ll take it from there.
@@ -46,22 +46,22 @@ export default function PlanTrip() {
           {/* Right: Form */}
           <form onSubmit={handleSubmit} className="space-y-8">
             <div className="border-b border-neutral-300 pb-2">
-              <label className="block text-[10px] tracking-[0.2em] mb-3 text-neutral-400">FULL NAME</label>
+              <label className="block text-xs tracking-[0.2em] mb-3 text-black">FULL NAME</label>
               <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Your name" className="w-full bg-transparent focus:outline-none text-sm text-neutral-700 placeholder-neutral-400" required />
             </div>
 
             <div className="border-b border-neutral-300 pb-2">
-              <label className="block text-[10px] tracking-[0.2em] mb-3 text-neutral-400">EMAIL</label>
+              <label className="block text-xs tracking-[0.2em] mb-3 text-black">EMAIL</label>
               <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="your@email.com" className="w-full bg-transparent focus:outline-none text-sm text-neutral-700 placeholder-neutral-400" required />
             </div>
 
             <div className="border-b border-neutral-300 pb-2">
-              <label className="block text-[10px] tracking-[0.2em] mb-3 text-neutral-400">WHEN ARE YOU THINKING OF COMING?</label>
+              <label className="block text-xs tracking-[0.2em] mb-3 text-black">WHEN ARE YOU THINKING OF COMING?</label>
               <input type="text" name="when" value={formData.when} onChange={handleChange} placeholder="Month, year, or a rough window" className="w-full bg-transparent focus:outline-none text-sm text-neutral-700 placeholder-neutral-400" />
             </div>
 
             <div className="border-b border-neutral-300 pb-2">
-              <label className="block text-[10px] tracking-[0.2em] mb-3 text-neutral-400">WHAT ARE YOU DREAMING OF?</label>
+              <label className="block text-xs tracking-[0.2em] mb-3 text-black">WHAT ARE YOU DREAMING OF?</label>
               <textarea name="dream" value={formData.dream} onChange={handleChange} placeholder="Tell us about the experience you have in mind — the more you share, the better we can shape your journey." rows={4} className="w-full bg-transparent focus:outline-none text-sm text-neutral-700 placeholder-neutral-400 resize-none" />
             </div>
 

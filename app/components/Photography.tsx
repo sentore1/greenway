@@ -4,9 +4,9 @@ export default function Photography() {
   return (
     <section className="py-24 md:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-16 items-center mb-20">
+        <div className="grid md:grid-cols-2 gap-0 items-center mb-20 bg-slate-700">
           {/* Left: Content */}
-          <div className="bg-slate-700 text-white p-12 md:p-16 min-h-[500px] flex flex-col justify-center">
+          <div className="text-white p-12 md:p-16 min-h-[500px] flex flex-col justify-center">
             <div className="text-xs tracking-[0.3em] mb-8 text-neutral-300">PHOTOGRAPHY EXPERIENCES</div>
             <h2 className="text-4xl md:text-5xl font-light leading-tight mb-8">
               Photography is how we grew up seeing Rwanda. Travel with it.
@@ -18,7 +18,7 @@ export default function Photography() {
 
           {/* Right: Image */}
           <div className="relative h-96 md:h-[500px]">
-            <Image src="/images/kid.JPG" alt="Photography Experience" fill className="object-cover" />
+            <Image src="/images/kids.png" alt="Photography Experience" fill className="object-cover" />
             <div className="absolute bottom-4 right-4 text-white text-xs tracking-[0.2em] opacity-70">THE PHOTO PROJECT</div>
           </div>
         </div>

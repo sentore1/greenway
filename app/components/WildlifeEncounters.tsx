@@ -1,6 +1,36 @@
+"use client";
+
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 export default function WildlifeEncounters() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const sliderImages = [
+    "/images/slide1/rwe.png",
+    "/images/slide1/ew.jpeg",
+    "/images/slide1/ff.jpeg",
+    "/images/slide1/fwf.jpeg",
+    "/images/slide1/IMG_1081.WEBP",
+    "/images/slide1/IMG_1082.WEBP",
+    "/images/slide1/ss.jpeg"
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % sliderImages.length);
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(timer);
+  }, [sliderImages.length]);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % sliderImages.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + sliderImages.length) % sliderImages.length);
+  };
   const encounters = [
     {
       number: "01",
@@ -32,17 +62,62 @@ export default function WildlifeEncounters() {
   return (
     <section className="py-24 md:py-32 px-6 bg-[#f0ede6]">
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-16 mb-20">
-          {/* Left: Image */}
-          <div className="relative h-96 md:h-[600px]">
-            <Image src="/images/9.jpg" alt="Volcanoes National Park" fill className="object-cover" />
+        <div className="grid md:grid-cols-2 gap-0 mb-20 bg-[#e8e4d9]">
+          {/* Left: Image Slider */}
+          <div className="relative h-96 md:h-[600px] overflow-hidden">
+            {sliderImages.map((image, index) => (
+              <div
+                key={index}
+                className={`absolute inset-0 transition-opacity duration-1000 ${
+                  index === currentSlide ? "opacity-100" : "opacity-0"
+                }`}
+              >
+                <Image src={image} alt="Wildlife Encounter" fill className="object-cover" />
+              </div>
+            ))}
+            <div className="absolute inset-0 bg-black/30"></div>
+            
+            {/* Navigation Arrows */}
+            <button
+              onClick={prevSlide}
+              className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full transition-all"
+              aria-label="Previous slide"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button
+              onClick={nextSlide}
+              className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full transition-all"
+              aria-label="Next slide"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+
+            {/* Slide Indicators */}
+            <div className="absolute bottom-16 left-1/2 -translate-x-1/2 z-10 flex gap-2">
+              {sliderImages.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`w-2 h-2 rounded-full transition-all ${
+                    index === currentSlide ? "bg-white w-8" : "bg-white/50"
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+
             <div className="absolute bottom-4 left-4 text-white text-xs tracking-[0.2em] opacity-80">
-              VOLCANOES NATIONAL PARK
+              ONE&ONLY NYUNGWE HOUSE
             </div>
           </div>
 
-          {/* Right: Content */}
-          <div className="flex flex-col justify-center">
+          {/* Right: Content with background */}
+          <div className="relative h-96 md:h-[600px] flex flex-col justify-center px-8 md:px-12">
             <div className="text-xs tracking-[0.3em] mb-8 text-neutral-600">WILDLIFE ENCOUNTERS</div>
             <h2 className="text-4xl md:text-5xl font-light leading-tight mb-8">
               Meet the wild that made this land sacred.
@@ -55,8 +130,12 @@ export default function WildlifeEncounters() {
 
         {/* Encounters Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8">
-          {encounters.map((encounter) => (
-            <div key={encounter.number} className="space-y-3">
+          {encounters.map((encounter, index) => (
+            <div key={encounter.number} className="relative space-y-3">
+              {/* Vertical line only on the left side of Game Drives (index 3) */}
+              {index === 3 && (
+                <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-neutral-300 hidden lg:block" style={{ left: '-1rem' }} />
+              )}
               <div className="text-xs tracking-[0.3em] text-neutral-400">{encounter.number}</div>
               <h3 className="text-xl font-light">{encounter.title}</h3>
               <p className="text-sm leading-relaxed text-neutral-600">{encounter.description}</p>

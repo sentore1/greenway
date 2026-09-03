@@ -22,7 +22,11 @@ export default function Impact() {
     }
   ];
 
-  const images = ["/images/34.jpg", "/images/35.jpg", "/images/40.jpg"];
+  const images = [
+    "/images/blog/Umubyeyi Mwiza.jpeg",
+    "/images/blog/Green Steps Rwanda.jpeg",
+    "/images/blog/Inararibonye Girls' Education Trust — keeping girls in secondary school across three provinces..jpeg"
+  ];
 
   return (
     <section id="impact" className="bg-white">

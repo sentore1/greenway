@@ -25,7 +25,7 @@ export default function WildPlaces() {
           <h2 className="text-4xl md:text-5xl font-light leading-tight mb-8 text-neutral-800" style={{ fontFamily: 'var(--font-cormorant)' }}>
             These are the wild places we call home on the road.
           </h2>
-          <p className="text-sm leading-relaxed text-neutral-600 max-w-sm">
+          <p className="text-sm leading-relaxed text-neutral-600 max-w-xl">
             Great journeys sleep well. Spectacular lodges that are themselves the encounter — chosen for where they sit in the landscape, not just the rooms.
           </p>
         </div>

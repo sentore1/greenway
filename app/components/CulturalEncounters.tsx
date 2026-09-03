@@ -18,7 +18,8 @@ export default function CulturalEncounters() {
 
         {/* Right: Image — same height as content */}
         <div className="w-full md:w-1/2 relative min-h-[400px] md:min-h-0">
-          <Image src="/images/2.jpg" alt="Cultural Encounters" fill className="object-cover" />
+          <Image src="/images/IMG_1085.JPG.jpeg" alt="Cultural Encounters" fill className="object-cover" />
+          <div className="absolute inset-0 bg-black/20"></div>
           <div className="absolute bottom-4 right-4 text-white text-xs tracking-[0.2em] opacity-70">KIGALI</div>
         </div>
       </div>
