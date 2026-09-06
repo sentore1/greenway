@@ -43,7 +43,7 @@ I have successfully created a **complete, production-ready Next.js website** tha
 - ✅ **All photography experiences** (Photograph Your Journey, The Photo Project)
 - ✅ **Complete founder story** (Gadi & Mussa, Imbabazi, Roz Carr, 1994 Genocide)
 - ✅ **All 3 impact organizations** with detailed outcomes
-- ✅ **Contact information** (hello@greenway.rw, +250 788 000 000)
+- ✅ **Contact information** (hello@greenwaysafaris.com, +250 788 694 331)
 
 ### 3. Pixel-Perfect Design ✓
 - ✅ **Typography**: Cormorant Garamond serif font from Google Fonts

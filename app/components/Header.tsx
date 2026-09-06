@@ -9,7 +9,7 @@ export default function Header() {
 
   return (
     <header className="absolute top-0 left-0 right-0 z-50 bg-transparent">
-      <nav className="max-w-7xl mx-auto px-6 py-1 -mt-4 flex items-center justify-between">
+      <nav className="max-w-7xl mx-auto px-6 py-4 mt-4 flex items-center justify-between">
         <Link href="/">
           <Image src="/logo.png" alt="Green Way Safaris" width={240} height={96} className="object-contain" />
         </Link>

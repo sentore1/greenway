@@ -136,8 +136,8 @@
 - [x] Personal note: "Every enquiry is read and responded to by Gadi or Mussa personally"
 - [x] Direct contact section:
   - [x] "Or reach us directly — we reply quickly."
-  - [x] Email: hello@greenway.rw
-  - [x] WhatsApp: +250 788 000 000
+  - [x] Email: hello@greenwaysafaris.com
+  - [x] WhatsApp: +250 788 694 331
 
 ### 11. Footer ✓
 - [x] Dark background (bg-neutral-900)

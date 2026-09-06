@@ -81,8 +81,8 @@ To add images:
 
 ## Contact Information
 
-- Email: hello@greenway.rw
-- WhatsApp: +250 788 000 000
+- Email: hello@greenwaysafaris.com
+- WhatsApp: +250 788 694 331
 - Location: Kigali, Rwanda
 
 ---

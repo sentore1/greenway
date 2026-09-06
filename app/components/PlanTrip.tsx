@@ -38,8 +38,8 @@ export default function PlanTrip() {
             </p>
             <div className="space-y-2 text-sm text-neutral-500">
               <p>Or reach us directly — we reply quickly.</p>
-              <p><a href="mailto:hello@greenway.rw" className="underline hover:no-underline">hello@greenway.rw</a></p>
-              <p>WhatsApp: <a href="tel:+250788000000" className="underline hover:no-underline">+250 788 000 000</a></p>
+              <p><a href="mailto:hello@greenwaysafaris.com" className="underline hover:no-underline">hello@greenwaysafaris.com</a></p>
+              <p>WhatsApp: <a href="tel:+250788000000" className="underline hover:no-underline">+250 788 694 331</a></p>
             </div>
           </div>
 

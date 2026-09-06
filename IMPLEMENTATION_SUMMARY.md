@@ -92,8 +92,8 @@ I've successfully created a complete Next.js website that matches the Green Way 
   - What are you dreaming of?
 - Submit button
 - Direct contact information:
-  - Email: hello@greenway.rw
-  - WhatsApp: +250 788 000 000
+  - Email: hello@greenwaysafaris.com
+  - WhatsApp: +250 788 694 331
 - Personal touch: "Every enquiry is read and responded to by Gadi or Mussa personally"
 
 #### Footer (`app/components/Footer.tsx`)

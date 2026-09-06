@@ -197,7 +197,7 @@ I've recreated the entire website from the PDF. Here's a detailed comparison:
 - Form fields: FULL NAME, EMAIL, WHEN ARE YOU THINKING OF COMING?, WHAT ARE YOU DREAMING OF?
 - "SEND ENQUIRY →"
 - "Every enquiry is read and responded to by Gadi or Mussa personally."
-- Direct contact: hello@greenway.rw, WhatsApp: +250 788 000 000
+- Direct contact: hello@greenwaysafaris.com, WhatsApp: +250 788 694 331
 - Footer: "Rwanda — photographed, filmed and guided by the people who grew up here."
 - "© 2026 Green Way Safaris. All rights reserved. Kigali, Rwanda"
 
