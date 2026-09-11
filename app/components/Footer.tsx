@@ -27,6 +27,9 @@ export default function Footer() {
             <Link href="#impact" className="text-sm tracking-[0.2em] hover:opacity-70 transition-opacity">
               IMPACT
             </Link>
+            <Link href="/blog" className="text-sm tracking-[0.2em] hover:opacity-70 transition-opacity">
+              JOURNAL
+            </Link>
             <Link href="#plan" className="text-sm tracking-[0.2em] hover:opacity-70 transition-opacity">
               PLAN YOUR TRIP
             </Link>

@@ -63,7 +63,7 @@ export default function WildlifeEncounters() {
   ];
 
   return (
-    <section className="py-24 md:py-32 px-6 bg-[#f0ede6]">
+    <section id="wildlife" className="py-24 md:py-32 px-6 bg-[#f0ede6]">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-0 mb-20 bg-[#e8e4d9]">
           {/* Left: Image Slider */}

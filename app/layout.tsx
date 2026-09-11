@@ -11,6 +11,11 @@ const cormorant = Cormorant_Garamond({
 export const metadata: Metadata = {
   title: "Green Way Safaris — Rwanda",
   description: "A Rwanda travel company created by photographers who grew up in its forests and hills.",
+  icons: {
+    icon: "/logoforfavicon.png",
+    shortcut: "/logoforfavicon.png",
+    apple: "/logoforfavicon.png",
+  },
 };
 
 export default function RootLayout({

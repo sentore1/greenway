@@ -19,7 +19,7 @@ export default function Photography() {
   }, []);
 
   return (
-    <section className="py-24 md:py-32 bg-white">
+    <section id="photography" className="py-24 md:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-0 items-center mb-20 bg-slate-700">
           {/* Left: Content */}

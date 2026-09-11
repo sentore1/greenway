@@ -10,6 +10,8 @@ import Impact from "./components/Impact";
 import PlanTrip from "./components/PlanTrip";
 import Footer from "./components/Footer";
 
+export const dynamic = "force-dynamic"; // always re-render, picks up Supabase changes live
+
 export default function Home() {
   return (
     <main className="min-h-screen">

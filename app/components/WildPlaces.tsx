@@ -42,7 +42,7 @@ export default function WildPlaces() {
   ];
 
   return (
-    <section className="bg-[#f0ede6] py-16 md:py-24">
+    <section id="wild-places" className="bg-[#f0ede6] py-16 md:py-24">
       {/* Full-width split: slider left, content right */}
       <div className="flex flex-col md:flex-row mx-6 md:mx-16">
         {/* Left: Image Slider */}

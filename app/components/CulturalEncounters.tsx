@@ -36,7 +36,7 @@ export default function CulturalEncounters() {
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + sliderImages.length) % sliderImages.length);
 
   return (
-    <section className="bg-neutral-900 text-white">
+    <section id="cultural" className="bg-neutral-900 text-white">
       {/* Full-width split: content left, slider right */}
       <div className="flex flex-col md:flex-row">
         {/* Left: Content */}
