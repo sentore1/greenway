@@ -7,13 +7,16 @@ export default function WildlifeEncounters() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const sliderImages = [
-    "/images/slide1/rwe.png",
-    "/images/slide1/ew.jpeg",
-    "/images/slide1/ff.jpeg",
-    "/images/slide1/fwf.jpeg",
-    "/images/slide1/IMG_1081.WEBP",
-    "/images/slide1/IMG_1082.WEBP",
-    "/images/slide1/ss.jpeg"
+    "/images/widlife/18.jpg",
+    "/images/widlife/32.jpg",
+    "/images/widlife/34.jpg",
+    "/images/widlife/36.jpg",
+    "/images/widlife/39.jpg",
+    "/images/widlife/40.jpg",
+    "/images/widlife/41.jpg",
+    "/images/widlife/42.jpg",
+    "/images/widlife/43.jpg",
+    "/images/widlife/animal5.jpg",
   ];
 
   useEffect(() => {
@@ -97,14 +100,14 @@ export default function WildlifeEncounters() {
               </svg>
             </button>
 
-            {/* Slide Indicators */}
-            <div className="absolute bottom-16 left-1/2 -translate-x-1/2 z-10 flex gap-2">
+            {/* Slide Indicators — small, bottom right */}
+            <div className="absolute bottom-4 right-4 z-10 flex gap-1.5">
               {sliderImages.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`w-2 h-2 rounded-full transition-all ${
-                    index === currentSlide ? "bg-white w-8" : "bg-white/50"
+                  className={`h-1.5 rounded-full transition-all ${
+                    index === currentSlide ? "bg-white w-4" : "bg-white/50 w-1.5"
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
                 />
@@ -112,14 +115,14 @@ export default function WildlifeEncounters() {
             </div>
 
             <div className="absolute bottom-4 left-4 text-white text-xs tracking-[0.2em] opacity-80">
-              ONE&ONLY NYUNGWE HOUSE
+              WHERE EVERY ENCOUNTER IS UNREPEATABLE
             </div>
           </div>
 
           {/* Right: Content with background */}
           <div className="relative h-96 md:h-[600px] flex flex-col justify-center px-8 md:px-12">
-            <div className="text-xs tracking-[0.3em] mb-8 text-neutral-600">WILDLIFE ENCOUNTERS</div>
-            <h2 className="text-4xl md:text-5xl font-light leading-tight mb-8">
+            <div className="text-3xl tracking-[0.3em] mb-4 text-neutral-600 uppercase leading-relaxed">Wildlife<br />Encounters</div>
+            <h2 className="text-5xl md:text-6xl font-semibold leading-tight mb-8">
               Meet the wild that made this land sacred.
             </h2>
             <p className="text-base md:text-lg leading-relaxed text-neutral-700 mb-4">
