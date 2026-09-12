@@ -46,6 +46,12 @@ create policy "Anon can update posts"
   using (true)
   with check (true);
 
+-- Allow anon key to delete posts
+create policy "Anon can delete posts"
+  on public.blog_posts for delete
+  to anon
+  using (true);
+
 -- -------------------------------------------------------
 -- Seed: the three existing impact stories
 -- -------------------------------------------------------

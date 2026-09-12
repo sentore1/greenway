@@ -37,7 +37,8 @@ export default async function Impact() {
     .select("id, title, slug, excerpt, body, cover_image, created_at")
     .eq("category", "Impact")
     .eq("published", true)
-    .order("created_at", { ascending: true });
+    .order("created_at", { ascending: true })
+    .limit(3);
 
   if (error) console.error("Impact fetch error:", error.message);
 
