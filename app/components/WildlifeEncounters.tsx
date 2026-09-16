@@ -7,7 +7,7 @@ export default function WildlifeEncounters() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const sliderImages = [
-    "/images/widlife/18.jpg",
+    "/images/widlife/177002887f7f1251a4adf7c9b25145cc.jpg",
     "/images/widlife/32.jpg",
     "/images/widlife/34.jpg",
     "/images/widlife/36.jpg",
@@ -16,6 +16,8 @@ export default function WildlifeEncounters() {
     "/images/widlife/41.jpg",
     "/images/widlife/42.jpg",
     "/images/widlife/43.jpg",
+    "/images/widlife/49fe9e0654691950a991c57b35073e30.jpg",
+    "/images/widlife/87a81d53b5eb0e58bf1fae772e6dfac8.jpg",
     "/images/widlife/animal5.jpg",
   ];
 
@@ -125,7 +127,7 @@ export default function WildlifeEncounters() {
             <h2 className="text-5xl md:text-6xl font-semibold leading-tight mb-8">
               Meet the wild that made this land sacred.
             </h2>
-            <p className="text-base md:text-lg leading-relaxed text-neutral-700 mb-4">
+            <p className="leading-relaxed text-neutral-700 mb-4" style={{ fontSize: "19px" }}>
               Rwanda&rsquo;s wildlife is intimate and ancient. These are not spectacles — they are encounters. Each one quiet, unhurried, and entirely itself.
             </p>
           </div>

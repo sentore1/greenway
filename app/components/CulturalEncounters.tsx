@@ -7,22 +7,10 @@ export default function CulturalEncounters() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const sliderImages = [
-    "/images/culture/Ethnographic-Museum-Visit-Rwanda-1024x769.jpg",
-    "/images/culture/phildsc4041.jpg",
-    "/images/culture/b06d4aea50c9d6d1fdf8a3b186f963c2.jpg",
-    "/images/culture/fbe2cd560fc4dc72939e77736711e3d1.jpg",
-    "/images/culture/d8af78a1b76bb0e07ca7f2db75f6046d.jpg",
     "/images/culture/a01e05166009d63863bd4fbf280359d9.jpg",
-    "/images/culture/9cb07419d7929a17f864657d87f8aa47.jpg",
-    "/images/culture/b6ae2a6904679e29281fb7c039b6482c.jpg",
-    "/images/culture/be99b933d6cae5ce3e7a7b481cbc7ce2.jpg",
-    "/images/culture/891a74bf064137dcbcc5d814bd457eae.jpg",
-    "/images/culture/bfc98c3cf556265fcc31b0c59449917c.jpg",
-    "/images/culture/6a0d4d5d6ca44c67151207795bb0432e.jpg",
-    "/images/culture/ea3586f900c9261b765a7a8b1b1568a4.jpg",
-    "/images/culture/647bdfa7ae1f93d5d0cd287868f2de78.jpg",
-    "/images/culture/31457d264fcf73b227bbb1a7441fc7ab.jpg",
-    "/images/culture/ff4529d0979cf7c97afb6cc21c3a5a93.jpg",
+    "/images/culture/Image.webp",
+    "/images/culture/oonh-resort-tea-lounge-hallway-3.webp",
+    "/images/culture/phildsc4041.jpg",
   ];
 
   useEffect(() => {
@@ -45,7 +33,7 @@ export default function CulturalEncounters() {
           <h2 className="text-4xl md:text-5xl font-light leading-tight mb-8">
             Meet the people and stories that make Rwanda what it is.
           </h2>
-          <p className="text-sm leading-relaxed text-neutral-300 max-w-sm">
+          <p className="leading-relaxed text-neutral-300 max-w-sm" style={{ fontSize: "19px" }}>
             Culture is not a performance. These visits are an invitation into real places, real conversations and the quiet depth of Rwandan creative life.
           </p>
         </div>

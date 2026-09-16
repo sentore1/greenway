@@ -2,12 +2,19 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [encountersOpen, setEncountersOpen] = useState(false);
   const [mobileEncountersOpen, setMobileEncountersOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const encounterLinks = [
     { href: "#wildlife", label: "WILDLIFE" },
@@ -16,21 +23,34 @@ export default function Header() {
     { href: "#photography", label: "PHOTOGRAPHY EXPERIENCES" },
   ];
 
+  const textColor = scrolled ? "text-neutral-800" : "text-white";
+  const borderColor = scrolled ? "border-neutral-800" : "border-white";
+  const hoverBtn = scrolled
+    ? "hover:bg-neutral-800 hover:text-white"
+    : "hover:bg-white hover:text-neutral-900";
+  const iconColor = scrolled ? "text-neutral-800" : "text-white";
+
   return (
-    <header className="absolute top-0 left-0 right-0 z-50 bg-transparent">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white shadow-sm" : "bg-transparent"}`}>
       <nav className="max-w-7xl mx-auto px-6 py-4 mt-4 flex items-center justify-between">
         <Link href="/">
-          <Image src="/logo.png" alt="Green Way Safaris" width={240} height={96} className="object-contain" />
+          <Image
+            src="/logo.png"
+            alt="Green Way Safaris"
+            width={240}
+            height={96}
+            className={`object-contain transition-all duration-300 ${scrolled ? "brightness-0" : "brightness-100"}`}
+          />
         </Link>
 
         <div className="hidden md:flex items-center gap-12 absolute left-1/2 -translate-x-1/2">
-          {/* Encounters dropdown — full wrapper captures hover over both button and menu */}
+          {/* Encounters dropdown */}
           <div
             className="relative py-4 -my-4"
             onMouseEnter={() => setEncountersOpen(true)}
             onMouseLeave={() => setEncountersOpen(false)}
           >
-            <button className="text-white text-[11px] tracking-[0.2em] hover:opacity-70 transition-opacity font-sans flex items-center gap-1">
+            <button className={`${textColor} text-[11px] tracking-[0.2em] hover:opacity-70 transition-all font-sans flex items-center gap-1`}>
               ENCOUNTERS
               <svg
                 className={`w-3 h-3 transition-transform duration-200 ${encountersOpen ? "rotate-180" : ""}`}
@@ -59,10 +79,10 @@ export default function Header() {
             )}
           </div>
 
-          <Link href="#story" className="text-white text-[11px] tracking-[0.2em] hover:opacity-70 transition-opacity font-sans">
+          <Link href="/photography" className={`${textColor} text-[11px] tracking-[0.2em] hover:opacity-70 transition-all font-sans`}>
             OUR STORY
           </Link>
-          <Link href="#impact" className="text-white text-[11px] tracking-[0.2em] hover:opacity-70 transition-opacity font-sans">
+          <Link href="#impact" className={`${textColor} text-[11px] tracking-[0.2em] hover:opacity-70 transition-all font-sans`}>
             IMPACT
           </Link>
         </div>
@@ -70,14 +90,14 @@ export default function Header() {
         <div className="hidden md:block">
           <Link
             href="#plan"
-            className="text-white text-[10px] tracking-[0.2em] border border-white px-6 py-2 hover:bg-white hover:text-neutral-900 transition-all font-sans"
+            className={`${textColor} ${borderColor} text-[10px] tracking-[0.2em] border px-6 py-2 ${hoverBtn} transition-all font-sans`}
           >
             PLAN YOUR TRIP →
           </Link>
         </div>
 
         <button
-          className="md:hidden text-white"
+          className={`md:hidden ${iconColor}`}
           onClick={() => setIsOpen(!isOpen)}
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -87,11 +107,11 @@ export default function Header() {
       </nav>
 
       {isOpen && (
-        <div className="md:hidden bg-black bg-opacity-95 text-white p-6 space-y-4">
+        <div className="md:hidden bg-white text-neutral-800 p-6 space-y-4 border-t border-neutral-100">
           {/* Mobile Encounters accordion */}
           <div>
             <button
-              className="flex items-center justify-between w-full text-[11px] tracking-[0.2em] font-sans"
+              className="flex items-center justify-between w-full text-[11px] tracking-[0.2em] font-sans text-neutral-800"
               onClick={() => setMobileEncountersOpen(!mobileEncountersOpen)}
             >
               ENCOUNTERS
@@ -110,7 +130,7 @@ export default function Header() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="block text-[10px] tracking-[0.15em] text-white/80 font-sans"
+                    className="block text-[10px] tracking-[0.15em] text-neutral-600 font-sans"
                     onClick={() => {
                       setIsOpen(false);
                       setMobileEncountersOpen(false);
@@ -123,13 +143,13 @@ export default function Header() {
             )}
           </div>
 
-          <Link href="#story" className="block text-[11px] tracking-[0.2em] font-sans" onClick={() => setIsOpen(false)}>
+          <Link href="/photography" className="block text-[11px] tracking-[0.2em] font-sans text-neutral-800" onClick={() => setIsOpen(false)}>
             OUR STORY
           </Link>
-          <Link href="#impact" className="block text-[11px] tracking-[0.2em] font-sans" onClick={() => setIsOpen(false)}>
+          <Link href="#impact" className="block text-[11px] tracking-[0.2em] font-sans text-neutral-800" onClick={() => setIsOpen(false)}>
             IMPACT
           </Link>
-          <Link href="#plan" className="block text-[10px] tracking-[0.2em] font-sans" onClick={() => setIsOpen(false)}>
+          <Link href="#plan" className="block text-[10px] tracking-[0.2em] font-sans text-neutral-800" onClick={() => setIsOpen(false)}>
             PLAN YOUR TRIP →
           </Link>
         </div>

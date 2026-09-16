@@ -47,24 +47,24 @@ export default function PlanTrip() {
         <div className="grid md:grid-cols-2 gap-16 items-start">
           {/* Left: Content */}
           <div>
-            <div className="text-xs tracking-[0.3em] mb-8 text-neutral-500">PLAN YOUR TRIP</div>
+            <div className="text-sm tracking-[0.3em] mb-8 text-neutral-900 font-medium">PLAN YOUR TRIP</div>
             <h2
-              className="text-4xl md:text-5xl font-light leading-tight mb-8"
+              className="text-4xl md:text-5xl font-light leading-tight mb-8 text-neutral-900"
               style={{ fontFamily: "var(--font-cormorant)" }}
             >
               Tell us what you&rsquo;re<br />dreaming of.
             </h2>
-            <p className="text-sm leading-relaxed text-neutral-600 mb-12 max-w-sm">
+            <p className="text-lg leading-relaxed text-neutral-900 mb-12 max-w-sm">
               Every Green Way journey is personal. Tell us a little about yourself,
               when you&rsquo;d like to come, and what you&rsquo;d love to experience.
               We&rsquo;ll take it from there.
             </p>
-            <div className="space-y-2 text-sm text-neutral-500">
+            <div className="space-y-3 text-base text-neutral-900">
               <p>Or reach us directly — we reply quickly.</p>
               <p>
                 <a
                   href="mailto:hello@greenwaysafaris.com"
-                  className="underline hover:no-underline"
+                  className="underline hover:no-underline font-medium"
                 >
                   hello@greenwaysafaris.com
                 </a>
@@ -73,7 +73,7 @@ export default function PlanTrip() {
                 WhatsApp:{" "}
                 <a
                   href="tel:+250788694331"
-                  className="underline hover:no-underline"
+                  className="underline hover:no-underline font-medium"
                 >
                   +250 788 694 331
                 </a>
@@ -88,7 +88,7 @@ export default function PlanTrip() {
               <h3 className="text-2xl font-light text-neutral-800">
                 Thank you.
               </h3>
-              <p className="text-sm text-neutral-600 leading-relaxed max-w-xs">
+              <p className="text-base text-neutral-900 leading-relaxed max-w-xs">
                 We&rsquo;ve received your enquiry. Gadi or Mussa will be in touch
                 personally — usually within 24 hours.
               </p>
@@ -102,7 +102,7 @@ export default function PlanTrip() {
           ) : (
             <form onSubmit={handleSubmit} className="space-y-8">
               <div className="border-b border-neutral-300 pb-2">
-                <label className="block text-xs tracking-[0.2em] mb-3 text-black">
+                <label className="block text-sm tracking-[0.2em] mb-3 text-neutral-900 font-medium">
                   FULL NAME
                 </label>
                 <input
@@ -111,13 +111,13 @@ export default function PlanTrip() {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Your name"
-                  className="w-full bg-transparent focus:outline-none text-sm text-neutral-700 placeholder-neutral-400"
+                  className="w-full bg-transparent focus:outline-none text-base text-neutral-900 placeholder-neutral-500"
                   required
                 />
               </div>
 
               <div className="border-b border-neutral-300 pb-2">
-                <label className="block text-xs tracking-[0.2em] mb-3 text-black">
+                <label className="block text-sm tracking-[0.2em] mb-3 text-neutral-900 font-medium">
                   EMAIL
                 </label>
                 <input
@@ -126,13 +126,13 @@ export default function PlanTrip() {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="your@email.com"
-                  className="w-full bg-transparent focus:outline-none text-sm text-neutral-700 placeholder-neutral-400"
+                  className="w-full bg-transparent focus:outline-none text-base text-neutral-900 placeholder-neutral-500"
                   required
                 />
               </div>
 
               <div className="border-b border-neutral-300 pb-2">
-                <label className="block text-xs tracking-[0.2em] mb-3 text-black">
+                <label className="block text-sm tracking-[0.2em] mb-3 text-neutral-900 font-medium">
                   WHEN ARE YOU THINKING OF COMING?
                 </label>
                 <input
@@ -141,12 +141,12 @@ export default function PlanTrip() {
                   value={formData.when}
                   onChange={handleChange}
                   placeholder="Month, year, or a rough window"
-                  className="w-full bg-transparent focus:outline-none text-sm text-neutral-700 placeholder-neutral-400"
+                  className="w-full bg-transparent focus:outline-none text-base text-neutral-900 placeholder-neutral-500"
                 />
               </div>
 
               <div className="border-b border-neutral-300 pb-2">
-                <label className="block text-xs tracking-[0.2em] mb-3 text-black">
+                <label className="block text-sm tracking-[0.2em] mb-3 text-neutral-900 font-medium">
                   WHAT ARE YOU DREAMING OF?
                 </label>
                 <textarea
@@ -155,12 +155,12 @@ export default function PlanTrip() {
                   onChange={handleChange}
                   placeholder="Tell us about the experience you have in mind — the more you share, the better we can shape your journey."
                   rows={4}
-                  className="w-full bg-transparent focus:outline-none text-sm text-neutral-700 placeholder-neutral-400 resize-none"
+                  className="w-full bg-transparent focus:outline-none text-base text-neutral-900 placeholder-neutral-500 resize-none"
                 />
               </div>
 
               {status === "error" && (
-                <p className="text-xs text-red-600 bg-red-50 border border-red-200 px-4 py-3">
+                <p className="text-sm text-red-600 bg-red-50 border border-red-200 px-4 py-3">
                   Something went wrong — please try again or email us directly.
                 </p>
               )}
@@ -169,11 +169,11 @@ export default function PlanTrip() {
                 <button
                   type="submit"
                   disabled={status === "sending"}
-                  className="bg-neutral-800 text-white px-8 py-4 text-[10px] tracking-[0.2em] hover:bg-neutral-700 transition-colors disabled:opacity-50"
+                  className="bg-neutral-800 text-white px-8 py-4 text-[11px] tracking-[0.2em] hover:bg-neutral-700 transition-colors disabled:opacity-50"
                 >
                   {status === "sending" ? "SENDING…" : "SEND ENQUIRY →"}
                 </button>
-                <p className="text-xs text-neutral-400 italic">
+                <p className="text-sm text-neutral-600 italic">
                   Every enquiry is read and responded to by Gadi or Mussa personally.
                 </p>
               </div>

@@ -7,20 +7,25 @@ export default function WildPlaces() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const sliderImages = [
-    "/images/inhouse/Image.webp",
+    "/images/inhouse/fsf.jpg",
     "/images/inhouse/NH_OO_Drone_Resort_4894_MASTER.webp",
-    "/images/inhouse/oonh-resort-tea-lounge-hallway-3.webp",
     "/images/inhouse/OO_GorillasNest_Exteriors_Villa_Wide_17041_MASTER.webp",
     "/images/inhouse/OO_GorillasNest_Exterior_Pathway_1320_MASTER.webp",
     "/images/inhouse/OO_GorillasNest_F&B_Outdoor_Dining_48_MASTER_HR.webp",
-    "/images/inhouse/OO_NyungweHouse_Accommodation_Suite_Balcony_Wide_0261_MASTER.webp",
-    "/images/inhouse/OO_NyungweHouse_F&B_Private_Dining_Deck_Wide_0643_MASTER.webp",
     "/images/inhouse/Sabyinyo-rwanda-cottage-exterior.jpg",
     "/images/inhouse/Singita-Kwitonda-Lodge-Bathroom-1024x684.jpg",
     "/images/inhouse/Singita-Kwitonda-Lodge-Bedroom-1024x684.jpg",
-    "/images/inhouse/Singita-Kwitonda-Lodge-Exterior-1.jpg",
     "/images/inhouse/SVNP_ROOM_Kwitonda_Lodge_Bedroom_Ross_Couper-3-1024x682.jpg",
     "/images/inhouse/wilderness-sabyinyo-cottage-suite.webp",
+    "/images/slide1/ew.jpeg",
+    "/images/slide1/ff.jpeg",
+    "/images/slide1/fwf.jpeg",
+    "/images/slide1/IMG_1081.WEBP",
+    "/images/slide1/IMG_1082.WEBP",
+    "/images/slide1/IMG_1369.JPG.jpeg",
+    "/images/slide1/IMG_1374.JPG.jpeg",
+    "/images/slide1/rwe.png",
+    "/images/slide1/ss.jpeg",
   ];
 
   useEffect(() => {
@@ -97,7 +102,7 @@ export default function WildPlaces() {
 
         {/* Right: Content panel */}
         <div className="w-full md:w-1/2 px-10 md:px-16 py-24 md:py-32 flex flex-col justify-center bg-[#e8e4db]">
-          <div className="text-xs tracking-[0.3em] mb-8 text-amber-700">WILD PLACES</div>
+          <div className="text-xs tracking-[0.3em] mb-8 text-amber-700">WILD PLACES - Resort</div>
           <h2 className="text-4xl md:text-5xl font-light leading-tight mb-8 text-neutral-800" style={{ fontFamily: 'var(--font-cormorant)' }}>
             These are the wild places we call home on the road.
           </h2>

@@ -83,16 +83,6 @@ export default async function Impact() {
   return (
     <section id="impact" className="bg-white">
       {/* Header */}
-      <div className="py-6 md:py-8 px-6 bg-neutral-900 text-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="w-16 h-px bg-neutral-500 mx-auto mb-4" />
-          <div className="text-base tracking-[0.3em] mb-4 opacity-60 italic">
-            See Rwanda Through Our Eyes
-          </div>
-          <div className="w-16 h-px bg-neutral-500 mx-auto mb-6" />
-        </div>
-      </div>
-
       {/* Content */}
       <div className="py-24 px-6">
         <div className="max-w-6xl mx-auto">

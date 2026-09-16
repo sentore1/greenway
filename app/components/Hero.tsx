@@ -1,115 +1,123 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const YOUTUBE_ID = "za3V2Awnla8";
+const SLIDES = [
+  {
+    src: "/images/herosection slider/1.jpeg",
+    caption: "WILD RWANDA",
+  },
+  {
+    src: "/images/herosection slider/2.jpeg",
+    caption: "FOREST SOULS",
+  },
+  {
+    src: "/images/herosection slider/3.jpeg",
+    caption: "GOLDEN HORIZONS",
+  },
+  {
+    src: "/images/herosection slider/4.jpeg",
+    caption: "OPEN PLAINS",
+  },
+];
 
 export default function Hero() {
-  const [videoOpen, setVideoOpen] = useState(false);
+  const [current, setCurrent] = useState(0);
+  const [prev, setPrev] = useState<number | null>(null);
+  const [transitioning, setTransitioning] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      goTo((current + 1) % SLIDES.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [current]);
+
+  function goTo(index: number) {
+    if (index === current || transitioning) return;
+    setPrev(current);
+    setCurrent(index);
+    setTransitioning(true);
+    setTimeout(() => {
+      setPrev(null);
+      setTransitioning(false);
+    }, 800);
+  }
 
   return (
-    <>
-      <section className="relative h-screen overflow-hidden">
-        {/* Background image */}
-        <div className="absolute inset-0 z-0">
+    <section className="relative h-screen overflow-hidden">
+      {/* Slide images */}
+      {SLIDES.map((slide, i) => (
+        <div
+          key={slide.src}
+          className={`absolute inset-0 z-0 transition-opacity duration-[800ms] ease-in-out ${
+            i === current ? "opacity-100" : "opacity-0"
+          }`}
+        >
           <Image
-            src="/images/herosectoin.jpg"
-            alt="Hero"
+            src={slide.src}
+            alt={slide.caption}
             fill
             className="object-cover object-center"
-            priority
+            priority={i === 0}
           />
-          <div className="absolute inset-0 bg-black opacity-40 z-10" />
+          <div className="absolute inset-0 bg-black opacity-30 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent z-10" />
         </div>
+      ))}
 
-        {/* Vertical label — right bottom */}
-        <div className="absolute right-6 md:right-8 bottom-0 z-10 pb-8 md:pb-12">
-          <div className="flex flex-col items-center">
-            <div className="h-px w-8 bg-white opacity-40 mb-3" />
-            <div className="text-white text-[9px] tracking-[0.4em] opacity-60 writing-mode-vertical transform rotate-180">
-              VOLCANOES NATIONAL PARK — MORNING MIST
-            </div>
+      {/* Vertical caption label — right bottom */}
+      <div className="absolute right-6 md:right-8 bottom-0 z-10 pb-20 md:pb-24">
+        <div className="flex flex-col items-center">
+          <div className="h-px w-8 bg-white opacity-40 mb-3" />
+          <div className="text-white text-[9px] tracking-[0.4em] opacity-60 writing-mode-vertical transform rotate-180">
+            {SLIDES[current].caption}
           </div>
         </div>
+      </div>
 
-        {/* Content — left bottom */}
-        <div className="absolute bottom-0 left-0 z-10 text-white px-6 md:px-12 lg:px-16 pb-8 md:pb-12 max-w-3xl">
-          <div className="text-[11px] tracking-[0.5em] mb-4 md:mb-5 opacity-80 font-light">
-            RWANDA
-          </div>
+      {/* Content — left bottom */}
+      <div className="absolute bottom-0 left-0 z-10 text-white px-6 md:px-12 lg:px-16 pb-8 md:pb-12 max-w-3xl">
+        <div className="text-[11px] tracking-[0.5em] mb-4 md:mb-5 opacity-80 font-light">
+          RWANDA
+        </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light leading-[1.15] mb-3 md:mb-4">
-            We didn&rsquo;t just<br />
-            discover Rwanda.
-          </h1>
+        <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light leading-[1.15] mb-3 md:mb-4">
+          We didn&rsquo;t just<br />
+          discover Rwanda.
+        </h1>
 
-          <p className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl italic font-light mb-6 md:mb-8 leading-[1.2]">
-            We grew up here.
-          </p>
+        <p className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl italic font-light mb-6 md:mb-8 leading-[1.2]">
+          We grew up here.
+        </p>
 
-          <p className="text-xs md:text-sm max-w-md font-light leading-relaxed opacity-90 mb-8">
-            A Rwanda travel company created by photographers who grew up<br className="hidden sm:block" />
-            in its forests and hills.
-          </p>
+        <p className="max-w-md font-light leading-relaxed opacity-90 mb-8" style={{ fontSize: "19px" }}>
+          A Rwanda travel company created by photographers who grew up in its forests and hills.<br className="hidden sm:block" />
+        </p>
+      </div>
 
-          {/* Watch video button */}
+      {/* Slide indicators */}
+      <div className="absolute bottom-8 md:bottom-12 right-6 md:right-12 z-10 flex items-center gap-3">
+        {SLIDES.map((_, i) => (
           <button
-            onClick={() => setVideoOpen(true)}
-            className="flex items-center gap-3 group"
-            aria-label="Watch our story"
-          >
-            {/* Play circle */}
-            <span className="flex items-center justify-center w-12 h-12 rounded-full border border-white/60 group-hover:border-white group-hover:bg-white/10 transition-all">
-              <svg className="w-4 h-4 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z" />
-              </svg>
-            </span>
-            <span className="text-xs tracking-[0.2em] text-white/80 group-hover:text-white transition-colors">
-              WATCH OUR STORY
-            </span>
-          </button>
-        </div>
+            key={i}
+            onClick={() => goTo(i)}
+            aria-label={`Go to slide ${i + 1}`}
+            className={`transition-all duration-300 rounded-full ${
+              i === current
+                ? "w-6 h-1.5 bg-white"
+                : "w-1.5 h-1.5 bg-white/50 hover:bg-white/80"
+            }`}
+          />
+        ))}
+      </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 md:bottom-12 left-1/2 transform -translate-x-1/2 z-10">
-          <div className="text-[9px] tracking-[0.4em] mb-3 text-white text-center">SCROLL</div>
-          <div className="w-px h-6 bg-white mx-auto opacity-50" />
-        </div>
-      </section>
-
-      {/* Video modal */}
-      {videoOpen && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 px-4"
-          onClick={() => setVideoOpen(false)}
-        >
-          <div
-            className="relative w-full max-w-4xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Close button */}
-            <button
-              onClick={() => setVideoOpen(false)}
-              className="absolute -top-10 right-0 text-white/70 hover:text-white text-xs tracking-[0.2em] flex items-center gap-2 transition-colors"
-              aria-label="Close video"
-            >
-              CLOSE ✕
-            </button>
-
-            {/* 16:9 iframe */}
-            <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-              <iframe
-                src={`https://www.youtube.com/embed/${YOUTUBE_ID}?autoplay=1&rel=0`}
-                title="Green Way Safaris — Our Story"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="absolute inset-0 w-full h-full"
-              />
-            </div>
-          </div>
-        </div>
-      )}
-    </>
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 md:bottom-12 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
+        <div className="text-[9px] tracking-[0.4em] text-white opacity-60">SCROLL</div>
+        <div className="w-px h-6 bg-white opacity-50" />
+      </div>
+    </section>
   );
 }
