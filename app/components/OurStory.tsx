@@ -6,7 +6,7 @@ export default function OurStory() {
 
       {/* Section label + headline */}
       <div className="max-w-7xl mx-auto px-6 pt-24 pb-12">
-        <div className="text-[11px] tracking-[0.4em] mb-5 text-neutral-500">OUR STORY</div>
+        <div className="text-[15px] tracking-[0.4em] mb-5 text-neutral-500">OUR STORY</div>
         <h2 className="text-5xl md:text-6xl lg:text-7xl font-light leading-tight text-neutral-800" style={{ fontFamily: "var(--font-cormorant)" }}>
           We didn&rsquo;t just discover Rwanda.<br />
           <span className="italic">We grew up here.</span>

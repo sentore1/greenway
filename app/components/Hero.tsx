@@ -30,7 +30,7 @@ export default function Hero() {
   useEffect(() => {
     const interval = setInterval(() => {
       goTo((current + 1) % SLIDES.length);
-    }, 5000);
+    }, 2000);
     return () => clearInterval(interval);
   }, [current]);
 

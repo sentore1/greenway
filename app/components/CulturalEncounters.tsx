@@ -7,6 +7,7 @@ export default function CulturalEncounters() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const sliderImages = [
+    "/images/1.jpg",
     "/images/culture/a01e05166009d63863bd4fbf280359d9.jpg",
     "/images/culture/Image.webp",
     "/images/culture/oonh-resort-tea-lounge-hallway-3.webp",

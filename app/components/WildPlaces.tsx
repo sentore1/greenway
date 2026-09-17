@@ -19,13 +19,9 @@ export default function WildPlaces() {
     "/images/inhouse/wilderness-sabyinyo-cottage-suite.webp",
     "/images/slide1/ew.jpeg",
     "/images/slide1/ff.jpeg",
-    "/images/slide1/fwf.jpeg",
     "/images/slide1/IMG_1081.WEBP",
     "/images/slide1/IMG_1082.WEBP",
-    "/images/slide1/IMG_1369.JPG.jpeg",
-    "/images/slide1/IMG_1374.JPG.jpeg",
     "/images/slide1/rwe.png",
-    "/images/slide1/ss.jpeg",
   ];
 
   useEffect(() => {
@@ -106,7 +102,7 @@ export default function WildPlaces() {
           <h2 className="text-4xl md:text-5xl font-light leading-tight mb-8 text-neutral-800" style={{ fontFamily: 'var(--font-cormorant)' }}>
             These are the wild places we call home on the road.
           </h2>
-          <p className="text-sm leading-relaxed text-neutral-600 max-w-xl">
+          <p className="text-base leading-relaxed text-neutral-600 max-w-xl" style={{ fontSize: "19px" }}>
             Great journeys sleep well. Spectacular lodges that are themselves the encounter — chosen for where they sit in the landscape, not just the rooms.
           </p>
         </div>
@@ -116,7 +112,6 @@ export default function WildPlaces() {
       <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 px-10 md:px-16 py-16 border-t border-neutral-300">
         {lodges.map((lodge) => (
           <div key={lodge.number} className="space-y-3">
-            <div className="text-xs tracking-[0.3em] text-neutral-400">{lodge.number}</div>
             <h3 className="text-xl font-light text-neutral-800">{lodge.name}</h3>
             <p className="text-sm italic leading-relaxed text-neutral-500">{lodge.location}</p>
           </div>

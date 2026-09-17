@@ -6,13 +6,14 @@ import { useState, useEffect } from "react";
 const YOUTUBE_ID = "O6aukeNQAM8";
 
 const slides = [
-  { type: "image" as const, src: "/images/photoproject/IMG_9522.JPG.jpeg", label: "THE PHOTO PROJECT" },
   { type: "video" as const, label: "PHOTOGRAPHY EXPERIENCE" },
+  { type: "image" as const, src: "/images/photoproject/kids.png", label: "THE PHOTO PROJECT" },
+  { type: "image" as const, src: "/images/photoproject/dult.png", label: "THE PHOTO PROJECT" },
 ];
 
 export default function Photography() {
   const [current, setCurrent] = useState(0);
-  const [videoActive, setVideoActive] = useState(false);
+  const [videoActive, setVideoActive] = useState(true);
 
   useEffect(() => {
     if (videoActive) return;
@@ -35,15 +36,15 @@ export default function Photography() {
   return (
     <section id="photography" className="py-24 md:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-0 items-center mb-20 bg-slate-700">
+        <div className="grid md:grid-cols-[2fr_3fr] gap-0 items-center mb-20 bg-slate-700">
           {/* Left: Content */}
           <div className="text-white p-12 md:p-16 min-h-[500px] flex flex-col justify-center">
-            <div className="text-xs tracking-[0.3em] mb-8 text-neutral-300">PHOTOGRAPHY EXPERIENCES</div>
+            <div className="text-xs tracking-[0.3em] mb-8 text-neutral-300">EXPERIENCE 02</div>
             <h2 className="text-4xl md:text-5xl font-light leading-tight mb-8">
-              Photography is how we grew up seeing Rwanda. Travel with it.
+              The Photo Project
             </h2>
             <p className="text-base leading-relaxed text-neutral-300">
-              We offer two ways to bring a camera — and both of them change something.
+              We carry a portable printer into rural Rwanda, photograph the people we meet, and leave the prints in their hands. A journey where the gift is a photograph.
             </p>
           </div>
 
@@ -65,8 +66,7 @@ export default function Photography() {
                       fill
                       className="object-cover"
                     />
-                    {/* Dark overlay on image */}
-                    <div className="absolute inset-0 bg-black/40 z-10" />
+
                   </>
                 ) : (
                   /* YouTube — oversized + centered to mimic object-cover */
@@ -81,8 +81,7 @@ export default function Photography() {
                         style={{ width: "177.78vh", height: "100vh", minWidth: "100%", minHeight: "56.25vw" }}
                       />
                     </div>
-                    {/* Dark overlay on video */}
-                    <div className="absolute inset-0 bg-black/40 z-10 pointer-events-none" />
+
                   </>
                 )}
               </div>

@@ -79,7 +79,7 @@ export default function Header() {
             )}
           </div>
 
-          <Link href="/photography" className={`${textColor} text-[11px] tracking-[0.2em] hover:opacity-70 transition-all font-sans`}>
+          <Link href="/#story" className={`${textColor} text-[11px] tracking-[0.2em] hover:opacity-70 transition-all font-sans`}>
             OUR STORY
           </Link>
           <Link href="#impact" className={`${textColor} text-[11px] tracking-[0.2em] hover:opacity-70 transition-all font-sans`}>
@@ -143,7 +143,7 @@ export default function Header() {
             )}
           </div>
 
-          <Link href="/photography" className="block text-[11px] tracking-[0.2em] font-sans text-neutral-800" onClick={() => setIsOpen(false)}>
+          <Link href="/#story" className="block text-[11px] tracking-[0.2em] font-sans text-neutral-800" onClick={() => setIsOpen(false)}>
             OUR STORY
           </Link>
           <Link href="#impact" className="block text-[11px] tracking-[0.2em] font-sans text-neutral-800" onClick={() => setIsOpen(false)}>

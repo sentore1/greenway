@@ -7,18 +7,12 @@ export default function WildlifeEncounters() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const sliderImages = [
-    "/images/widlife/177002887f7f1251a4adf7c9b25145cc.jpg",
-    "/images/widlife/32.jpg",
+    "/images/widlife/33.jpg",
     "/images/widlife/34.jpg",
     "/images/widlife/36.jpg",
-    "/images/widlife/39.jpg",
     "/images/widlife/40.jpg",
-    "/images/widlife/41.jpg",
     "/images/widlife/42.jpg",
-    "/images/widlife/43.jpg",
-    "/images/widlife/49fe9e0654691950a991c57b35073e30.jpg",
     "/images/widlife/87a81d53b5eb0e58bf1fae772e6dfac8.jpg",
-    "/images/widlife/animal5.jpg",
   ];
 
   useEffect(() => {
@@ -141,7 +135,6 @@ export default function WildlifeEncounters() {
               {index === 3 && (
                 <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-neutral-300 hidden lg:block" style={{ left: '-1rem' }} />
               )}
-              <div className="text-xs tracking-[0.3em] text-neutral-400">{encounter.number}</div>
               <h3 className="text-xl font-light">{encounter.title}</h3>
               <p className="text-sm leading-relaxed text-neutral-600">{encounter.description}</p>
             </div>
