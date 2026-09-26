@@ -7,12 +7,11 @@ export default function WildlifeEncounters() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const sliderImages = [
-    "/images/widlife/33.jpg",
+    "/images/widlife/3.jpeg",
+    "/images/widlife/4.jpeg",
     "/images/widlife/34.jpg",
     "/images/widlife/36.jpg",
     "/images/widlife/40.jpg",
-    "/images/widlife/42.jpg",
-    "/images/widlife/87a81d53b5eb0e58bf1fae772e6dfac8.jpg",
   ];
 
   useEffect(() => {

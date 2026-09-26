@@ -7,8 +7,8 @@ const YOUTUBE_ID = "O6aukeNQAM8";
 
 const slides = [
   { type: "video" as const, label: "PHOTOGRAPHY EXPERIENCE" },
-  { type: "image" as const, src: "/images/photoproject/kids.png", label: "THE PHOTO PROJECT" },
-  { type: "image" as const, src: "/images/photoproject/dult.png", label: "THE PHOTO PROJECT" },
+  { type: "image" as const, src: "/images/photoproject/IMG_9522.JPG.jpeg", label: "THE PHOTO PROJECT" },
+  { type: "image" as const, src: "/images/photoproject/IMG_9703.JPG.jpeg", label: "THE PHOTO PROJECT" },
 ];
 
 export default function Photography() {
@@ -38,7 +38,7 @@ export default function Photography() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-[2fr_3fr] gap-0 items-center mb-20 bg-slate-700">
           {/* Left: Content */}
-          <div className="text-white p-12 md:p-16 min-h-[500px] flex flex-col justify-center">
+          <div className="text-white p-12 md:p-16 min-h-[650px] flex flex-col justify-center">
             <div className="text-xs tracking-[0.3em] mb-8 text-neutral-300">EXPERIENCE 02</div>
             <h2 className="text-4xl md:text-5xl font-light leading-tight mb-8">
               The Photo Project
@@ -49,7 +49,7 @@ export default function Photography() {
           </div>
 
           {/* Right: Slideshow + Video */}
-          <div className="relative h-96 md:h-[500px] overflow-hidden bg-black">
+          <div className="relative h-96 md:h-[650px] overflow-hidden bg-black">
 
             {slides.map((slide, i) => (
               <div
@@ -87,6 +87,8 @@ export default function Photography() {
               </div>
             ))}
 
+
+
             {/* Dot indicators */}
             <div className="absolute bottom-4 left-4 flex gap-2 z-20">
               {slides.map((_, i) => (
@@ -102,8 +104,6 @@ export default function Photography() {
                 />
               ))}
             </div>
-
-            {/* WATCH button on image slide */}
             {slides[current]?.type === "image" && (
               <button
                 onClick={() => goTo(1)}

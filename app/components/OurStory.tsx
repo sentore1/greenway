@@ -57,28 +57,20 @@ export default function OurStory() {
         </div>
         <div className="relative h-[420px] md:h-[580px] overflow-hidden border-t border-l border-neutral-200">
           <Image
-            src="/images/photoproject/IMG_9522.JPG.jpeg"
-            alt="The Camera — children with cameras"
+            src="/images/photoproject/dult.png"
+            alt="The Camera — adult with camera"
             fill
             className="object-cover"
           />
         </div>
 
-        {/* Row 3 — Image left, The Journey right */}
-        <div className="relative h-[650px] md:h-[900px] overflow-hidden border-t border-neutral-200">
-          <Image
-            src="/images/photoproject/IMG_9703.JPG.jpeg"
-            alt="The Journey"
-            fill
-            className="object-cover"
-          />
-        </div>
-        <div className="flex flex-col justify-center px-10 md:px-14 py-24 bg-[#f0ede6] border-t border-l border-neutral-200">
+        {/* Row 3 — The Journey full width */}
+        <div className="md:col-span-2 flex flex-col justify-center px-10 md:px-14 py-24 bg-[#f0ede6] border-t border-neutral-200">
           <div className="text-[10px] tracking-[0.35em] mb-4 text-amber-700">THE JOURNEY</div>
-          <h3 className="text-3xl md:text-4xl font-light mb-5 text-neutral-800 leading-snug" style={{ fontFamily: "var(--font-cormorant)" }}>
+          <h3 className="text-3xl md:text-4xl font-light mb-5 text-neutral-800 leading-snug max-w-2xl" style={{ fontFamily: "var(--font-cormorant)" }}>
             Those cameras became our profession.
           </h3>
-          <p className="text-base leading-relaxed text-neutral-600 mb-6">
+          <p className="text-base leading-relaxed text-neutral-600 mb-6 max-w-2xl">
             Today we are photographers, filmmakers and guides — and we created Green Way Safaris to share the Rwanda we know with people from around the world.
           </p>
           <a
