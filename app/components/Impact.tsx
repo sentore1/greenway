@@ -113,11 +113,10 @@ export default async function Impact() {
             </div>
           </div>
 
-          {/* Cards — image always shown */}
+          {/* Cards hidden
           <div className="grid md:grid-cols-3 gap-8">
             {items.map((item) => (
               <div key={item.slug} className="flex flex-col">
-                {/* Image — uploaded or fallback */}
                 <div className="relative h-64 w-full bg-neutral-200 overflow-hidden mb-6">
                   <Image
                     src={item.imgSrc}
@@ -127,26 +126,20 @@ export default async function Impact() {
                     unoptimized={item.imgSrc.startsWith("https://")}
                   />
                 </div>
-
-                {/* Text */}
                 <div className="flex flex-col flex-1 space-y-4">
                   <h4 className="text-lg font-light text-neutral-800">{item.title}</h4>
-
                   <div>
                     <div className="text-xs tracking-[0.3em] mb-2 text-neutral-500">THE ORGANISATION</div>
                     <p className="text-sm leading-relaxed text-neutral-700">{item.organisation}</p>
                   </div>
-
                   <div>
                     <div className="text-xs tracking-[0.3em] mb-2 text-neutral-500">OUR ROLE</div>
                     <p className="text-sm leading-relaxed text-neutral-600">{item.role}</p>
                   </div>
-
                   <div>
                     <div className="text-xs tracking-[0.3em] mb-2 text-neutral-500">THE IMPACT</div>
                     <p className="text-sm leading-relaxed text-neutral-600">{item.impact}</p>
                   </div>
-
                   <Link
                     href={`/blog/${item.slug}`}
                     className="mt-auto pt-4 text-xs tracking-[0.15em] text-neutral-800 hover:opacity-60 transition-opacity"
@@ -157,6 +150,7 @@ export default async function Impact() {
               </div>
             ))}
           </div>
+          */}
 
           {/* Quote */}
           <div className="text-center mt-16 py-8 border-t border-neutral-200">
